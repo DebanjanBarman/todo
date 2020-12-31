@@ -26,5 +26,5 @@ func main() {
 	router := routes.Routes()
 
 	log.Printf("Listening at port %v ...\n", PORT)
-	log.Fatal(http.ListenAndServe(PORT, router))
+	log.Fatal(http.ListenAndServe(":"+PORT, router))
 }
