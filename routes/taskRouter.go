@@ -14,6 +14,6 @@ func Routes() *mux.Router {
 	router.HandleFunc("/api/v1/tasks/{id}", controller.GetTask).Methods(http.MethodGet)
 	router.HandleFunc("/api/v1/tasks/{id}", controller.UpdateTask).Methods(http.MethodPatch)
 	router.HandleFunc("/api/v1/tasks/{id}", controller.DeleteTask).Methods(http.MethodDelete)
-
+	router.HandleFunc("*", http.NotFound)
 	return router
 }
