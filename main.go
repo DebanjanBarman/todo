@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"github.com/DebanjanBarman/todo/db"
 	"github.com/DebanjanBarman/todo/routes"
 	"github.com/joho/godotenv"
@@ -13,7 +14,7 @@ func main() {
 	//Read environment variables
 	err := godotenv.Load("config.env")
 	if err != nil {
-		log.Fatal("Error loading environment variables")
+		fmt.Println("No config file")
 	}
 	PORT := os.Getenv("PORT")
 	MongodbConnectionUri := os.Getenv("MONGODB_CONNECTION_URI")
